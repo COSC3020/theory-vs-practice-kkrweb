@@ -57,7 +57,7 @@ I would say that finding the same element in a search of a tree of 10000 element
 
 log(n), with n as 1000 is provided to take 5 seconds as described in the problem details. In this case a theoretic log base is not explicitly given or pointed towards being used.
 However, a ratio to compare the 5 seconds to a theoretical asymptotic prediction for the 10000 element example can still be made.
-Consider log10(1000) = 3, log10(10000) = 4. 
+Consider log10(1000) = 3, log10(10000) = 4. (This could also be seen with log base 2, more relevant with computer science, yet the number 3 and 4 are prettier to look at and work with).
 The ratio between these two expressions can be used to assume a theoretical runtime for the 10000 element example.
 
 5 seconds * (4/3) = 20/3 seconds = 6.6666666... seconds.
@@ -87,12 +87,17 @@ though not potentially to the extreme level outlined in the details of the third
 Plagiarism Acknowledgement: I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
 Citations:
-Reviewed with course material as well as:
+Reviewed with course material as well as these two Cornell lectures:
 
 [https://www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture16.htm](url)
 “Lecture 16: Introduction to Asymptotic Analysis.” Www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture16.htm.
 
-Read a few excerpts from this University of Toronto research, but the vast vast majority of its content is way too advanced for the level of analysis I am at.
+[https://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html](url)
+“Asymptotic Complexity.” Www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html.
+
+//
+
+Not super relevant, but read a few excerpts from this University of Toronto research, but the vast vast majority of its content is way way too advanced for the level of analysis I am at.
 Stil was cool to at least comprehend an ounce of it, ha.
 [https://www.utstat.utoronto.ca/reid/research/wald.pdf](url)
 Reid, N. “Asymptotics and the Theory of Inference.” The Annals of Statistics, vol. 31, no. 6, 1 Dec. 2003, www.utstat.utoronto.ca/reid/research/wald.pdf, https://doi.org/10.1214/aos/1074290325. Accessed 11 Feb. 2025.
