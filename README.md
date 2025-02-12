@@ -79,19 +79,26 @@ Additionally, no two machines are exactly alike, and most times, even the same m
 If burdened with other processes or perhaps even something like thermal throttling from handling a heavy workload for a while,
 a machine may (unfortunately) decide to slow down to a great degree relative to its prior recorded performance in handling a certain process or program.
 
+A third example of something that could disrupt a runtime could be a poorly optimized update or software on the machine,
+relevant to either itself on a prior version, or just to what was originally expected from the machine.
+
+For instance, I think I did something wrong with my local Visual Studio, to the point that several of its runtimes in UWYO Data Structures were outlandishly slow, 
+and characteristic of a laptop of like 10+ years of age and processing power.
+However, my laptop is not nearly that old. So dealing with that was super fun, thanks Visual Studio.
+
 These factors would certainly throw off the timing of a binary search algorithm's asymptotic prediction, 
-though not potentially to the extreme level outlined in the details of the third part of the exercise.
+though not potentially to the extreme level outlined in the details of the third part of the exercise, going from 5 to 100 seconds as listed..
 
 //
 
 Plagiarism Acknowledgement: I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
 Citations:
-Reviewed with course material as well as these two Cornell lectures:
+Reviewed with course material as well as these two Cornell lecture pages, helping with some visualization and understanding of some assorted complexities and runtimes:
 
-“Lecture 16: Introduction to Asymptotic Analysis.” Www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture16.htm.
+“Lecture 16: Introduction to Asymptotic Analysis.” www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture16.htm.
 
-“Asymptotic Complexity.” Www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html.
+“Asymptotic Complexity.” www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html.
 
 //
 
