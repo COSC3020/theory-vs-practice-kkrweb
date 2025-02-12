@@ -20,6 +20,7 @@ Add your answers to this markdown file.
 Name: Kane Kriz
 
 Start Date: 11 Feb 2025
+First feedback request: 12 Feb 2025
 
 //
 
@@ -45,21 +46,41 @@ An incorrect interpretation of asymptotic analysis may cause researchers or indi
 //
 
 Response 2:
-First I want to review the behavior of a binary search tree (in the hope that it will make thinking about the problem easier).
+First I want to review the behavior of a binary search tree (in the hope that it will make thinking about the problem easier in my mind).
 In a binary search tree, assuming full and proper balanced form of the tree, each search of the sorted tree about halves the remaining search area for the element,
 following either the right or left child depending on whether or not the desired value is greater than or less than the element currently being checked.
 
-With what we know about the asymptotic complexity of search in a binary search tree, and my above mental review of the basic functionality of a binary search tree, I would say that finding the same element in a search of a tree of 10000 elements would be found as follows:
+This resultant "halving" of the remaining portions of the tree to search gives the search functionality of a binary search tree to have a run time complexity of O(logn). 
 
-RESPONSE NOT DONE YET
+With what we know about the asymptotic complexity of search in a binary search tree, and my above mental review of the basic functionality of a binary search tree, 
+I would say that finding the same element in a search of a tree of 10000 elements could be computed as follows.
+
+log(n), with n as 1000 is provided to take 5 seconds as described in the problem details. In this case a theoretic log base is not explicitly given or pointed towards being used.
+However, a ratio to compare the 5 seconds to a theoretical asymptotic prediction for the 10000 element example can still be made.
+Consider log10(1000) = 3, log10(10000) = 4. 
+The ratio between these two expressions can be used to assume a theoretical runtime for the 10000 element example.
+
+5 seconds * (4/3) = 20/3 seconds = 6.6666666... seconds.
+
+Therefore, using the ratio between two log expressions with the known n values, and applying the shown ratio between them, 
+we can assume the runtime of the 10000 element example to be 6.66666667 seconds.
 
 //
 
 Response 3:
-This could be the case, despite the fact that reasoning using the asymptotic complexity suggests a different time for various potential reasons altering the runtime than
-what was anticipated when using asymptotics.
+This could be the case,
+despite the fact that reasoning using the asymptotic complexity suggests a different time for various potential reasons altering the runtime than what was anticipated when using asymptotics.
 
-RESPONSE NOT DONE YET
+Some potential factors that could upset this predition are alterations from expected tree balance and implementation within either sections of the binary search algoritm
+or associated processes. 
+
+Additionally, no two machines are exactly alike, and most times, even the same machine will not run near exactly the same runtime as it may have prior. 
+
+If burdened with other processes or perhaps even something like thermal throttling from handling a heavy workload for a while,
+a machine may (unfortunately) decide to slow down to a great degree relative to its prior recorded performance in handling a certain process or program.
+
+These factors would certainly throw off the timing of a binary search algorithm's asymptotic prediction, 
+though not potentially to the extreme level outlined in the details of the third part of the exercise.
 
 //
 
