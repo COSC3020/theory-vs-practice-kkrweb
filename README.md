@@ -89,15 +89,12 @@ Plagiarism Acknowledgement: I certify that I have listed all sources used to com
 Citations:
 Reviewed with course material as well as these two Cornell lectures:
 
-[https://www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture16.htm](url)
 “Lecture 16: Introduction to Asymptotic Analysis.” Www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture16.htm.
 
-[https://www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html](url)
 “Asymptotic Complexity.” Www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html.
 
 //
 
 Not super relevant, but read a few excerpts from this University of Toronto research, but the vast vast majority of its content is way way too advanced for the level of analysis I am at.
 Stil was cool to at least comprehend an ounce of it, ha.
-[https://www.utstat.utoronto.ca/reid/research/wald.pdf](url)
 Reid, N. “Asymptotics and the Theory of Inference.” The Annals of Statistics, vol. 31, no. 6, 1 Dec. 2003, www.utstat.utoronto.ca/reid/research/wald.pdf, https://doi.org/10.1214/aos/1074290325. Accessed 11 Feb. 2025.
