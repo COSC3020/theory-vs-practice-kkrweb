@@ -28,7 +28,7 @@ Feedback Request 1: 12 Feb 2025
 //
 
 
-Feedback Request 2: 7 April 2025
+Feedback Request 2: 11 April 2025
 
 
 //
@@ -37,24 +37,41 @@ Feedback Request 2: 7 April 2025
 Response 1: 
 
 
-The first issue with asymptotic analysis being potentially misleading is due to a fundamental characteristic of asymptotic analysis as a whole.
-Asymptotic analysis focuses upon the highest order and most important term in regards to performance. 
+**Disregard for lower terms**
 
-However, smaller order terms still make an impact in realistic scenarios without notably large (asymptotic) input sizes. 
-In varying situations, these smaller order terms still can make a difference to the overall performance and runtime,though with asymptotic analysis, they are ignored.
+The first issue with asymptotic analysis being potentially misleading is due to a fundamental part of asymptotic analysis as a whole.
+Asymptotic analysis focuses upon the highest order and most important term in regards to performance.
 
-Another issue with asymptotic analysis being misleading could be as there are always differences between algorithms, 
-and depending on the input size,
-placing them into a blanket gap based on their highest ordered term can give the impression that all performances of shared terms in asymptotic analysis will always be near the same. 
+However, smaller order terms still make an impact in realistic scenarios without notably large (asymptotic) input sizes.
+In varying situations, these smaller order terms still can make a difference to the overall performance and runtime, though with asymptotic analysis, they are intentionally ignored.
 
-However, depending on the input size as well as the use case, sharing the same highest ordered term does not mean that high levels of similarity in regards to performance is certain.
 
-The core issue is that asymptotic analysis describes behavior as n grows extremely large, but practical inputs exist at limited scales, such as the mentioned 1,000 or 10,000 elements within the exercise / problem description. 
-At these sizes, lower order terms, which are ignored at large in asymptotic analysis can significantly impact performance. 
 
-A third misleading issue about asymptotic analysis is that one of three scenarios are always considered, being that of a worst case, average case, or best case scenario. 
-Though of course in real life applications input data can still align with these three categories, oftentimes it does not.
-An incorrect interpretation of asymptotic analysis may cause researchers or individuals to misinterpret these three categories as the only possible categories that input data can fall into.
+
+
+
+**Oversimplified Algorithm groupings by highest order terms**
+
+Another potential issue with asymptotic analysis is that it groups algorithms only by their highest order terms.
+This varies from the first provided reason as this considers the grouping by highest order terms as not harmful through the ignorance of lower order values, but due to oversimplification of grouping algorithms by these highest order terms.
+
+This could give the impression that two algorithms that have the same asymptotic complexity in common will perform similarly.
+In actuality, real world performance has the potential to vary dramatically due to more nuanced factors that are disregarded when simply considering asymptotics and shared highest order.
+
+The primary issue is that asymptotic analysis describes behavior as n grows extremely large, but practical inputs exist at limited scales, such as the mentioned 1,000 or 10,000 elements within the exercise/problem description.
+At these sizes, lower order terms (which are ignored at large in asymptotic analysis) can significantly impact an algorithm's performance.
+
+
+
+
+
+**Defined Case Types being Restrictive**
+
+A third misleading issue about asymptotic analysis is that one of three scenarios are always considered: worst case, average case, or best case scenario.
+Real world inputs often fall outside these best, middle, and worst case categories.
+This leads to performance that in many cases will not match theoretical calculations seen with asymptotics as closely as it is often made out or assumed to be.
+
+
 
 
 //
@@ -119,6 +136,7 @@ Hardware issues might certainly add inconsistencies or eventual problems in the 
 
 
 Plagiarism Acknowledgement: I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
 
 Citations:
 Reviewed with course material as well as these two Cornell lecture pages, helping with some visualization and understanding of some assorted complexities and runtimes:
