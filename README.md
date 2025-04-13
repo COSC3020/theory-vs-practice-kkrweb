@@ -33,6 +33,10 @@ Feedback Request 2: 11 April 2025
 
 //
 
+(I added the bolded titles in to better separate the reasoning of the issues from one another as in the original feedback request they were kind of bleeding into one another and making it hard to follow my reasoning.
+Also to make it more evident that reason 2 is not the same as reason 1, which was one of the outlined issues from the edits requested.
+Thank you.)
+
 
 Response 1: 
 
