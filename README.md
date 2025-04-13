@@ -70,15 +70,13 @@ In varying situations, these smaller order terms still can make a difference to 
 
 Another potential issue with asymptotic analysis is that it groups algorithms only by their highest order terms.
 
-This varies from the first provided reason as this considers the grouping by highest order terms as not harmful through the ignorance of lower order values, but due to oversimplification of grouping algorithms by these highest order terms.
-
-This could give the impression that two algorithms that have the same asymptotic complexity in common will perform similarly.
+This differs from the first reason by focusing on how defined asymptotic runtimes hide practical differences between algorithms with shared asymptotic complexity, rather than just conceptually ignoring lower order terms.
 
 In actuality, real world performance has the potential to vary dramatically due to more nuanced factors that are disregarded when simply considering asymptotics and shared highest order.
 
-The primary issue is that asymptotic analysis describes behavior as n grows extremely large, but practical inputs exist at limited scales, such as the mentioned 1,000 or 10,000 elements within the exercise/problem description.
+Two algorithms could have the exact same asymptoptic runtime but behave with notable variation relative to one another in practice.
 
-At these sizes, lower order terms (which are ignored at large in asymptotic analysis) can significantly impact an algorithm's performance.
+Asymptotic analysis could give off the impression that these two algorithms sharing the same listed asymptotic runtime should be running near identical in common applications, but this is not (often) the case.
 
 
 
@@ -88,7 +86,7 @@ At these sizes, lower order terms (which are ignored at large in asymptotic anal
 
 A third misleading issue about asymptotic analysis is that one of three scenarios are always considered: worst case, average case, or best case scenario.
 
-Real world inputs often fall outside these best, middle, and worst case categories.
+Real world inputs often fall outside these sharp definitions of best, middle, and worst case categories. (though still remaining between the best case and worst case)
 
 This leads to performance that in many cases will not match theoretical calculations seen with asymptotics as closely as it is often made out or assumed to be.
 
@@ -148,7 +146,20 @@ The discrepancy could stem from the tree’s balance.
 
 If elements were inserted in sorted order, the search tree gains the functionality similar to a linked list, turning a complexity O(log n) search into O(n). 
 
-The loss of logarithmic scaling in favor of linear asymptotic scaling could certainly cause such an increase upon moving to the larger sort of 10000 elements.
+The loss of logarithmic scaling in favor of linear asymptotic scaling could certainly cause such an increase upon moving to the larger sort of 10000 elements, as reasoned below.
+
+Let's conside the idea that the worst case tree complexity was being experienced, so O(n). 
+
+The work and runtime of the implementation would resultantly scale linearly via the nature of O(n) with that of the input size.
+
+The algorithm started with 1000 elements running at 5s, and went to 10000 elements running at 100s.
+
+If we were to follow the prediction from following the O(n) tree directly, this would be a transition of 10x (following input size) rather than the experienced 20x between the 5s and 100s.
+
+Though the worst case tree implementation may not theoretically contribute all of this proposed time increase directly, it could certainly play a large enough role that combined with a degree of the below issues, an increase to 100s could be possible and certainly realistic.
+
+
+
 
 
 
