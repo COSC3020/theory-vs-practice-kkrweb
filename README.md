@@ -35,23 +35,10 @@ Feedback Request 2: 13 April 2025
 
 
 
-
-(
-
-I added the bolded titles in to better separate the reasoning of the issues from one another as in the original feedback request they were kind of bleeding into one another and making it hard to follow my reasoning.
-Also to make it more evident that reason 2 is not the same as reason 1, which was one of the outlined issues from the edits requested.
-
-Thank you.
-
-)
-
-
-
-
 Response 1: 
 
 
-**Disregard for lower terms**
+**Reason 1: Disregard for lower terms**
 
 The first issue with asymptotic analysis being potentially misleading is due to a fundamental part of asymptotic analysis as a whole.
 
@@ -61,16 +48,8 @@ However, smaller order terms still make an impact in realistic scenarios without
 
 In varying situations, these smaller order terms still can make a difference to the overall performance and runtime, though with asymptotic analysis, they are intentionally ignored.
 
-
-
-
-
-
-**Oversimplified Algorithm groupings by highest order terms**
-
-Another potential issue with asymptotic analysis is that it groups algorithms only by their highest order terms.
-
-This differs from the first reason by focusing on how defined asymptotic runtimes hide practical differences between algorithms with shared asymptotic complexity, rather than just conceptually ignoring lower order terms.
+// Below section is the remnanats of the now scrapped second reason that just ended up being too similar to the first every time
+// ...kept them as they still have relevance to reason 1 but you can disregard them.
 
 In actuality, real world performance has the potential to vary dramatically due to more nuanced factors that are disregarded when simply considering asymptotics and shared highest order.
 
@@ -80,9 +59,26 @@ Asymptotic analysis could give off the impression that these two algorithms shar
 
 
 
+**Reason 2: **
+
+Asymptotic analysis could be potentially misleading as it assumes basic operations such as traditional compares to act in constant O(1) time.
+
+For instance, consdier comparisons between high bit integers and comparisons between low bit integers.
+
+A similar scenario can be considered when thinking about comparisons between short length strings and comparisons between long length strings.
+
+In asymptotic analysis, these basic operations are assumed to be performed in constant time.
+
+However, these comparisons still increase in required work and thus runtime as their size / complexity increases.
+
+By treating these operations as constants within asymptotic analysis, further differences between expectations and real world runtime can occur.
 
 
-**Defined Case Types being Restrictive**
+
+
+
+
+**Reason 3: Defined Case Types being Restrictive**
 
 A third misleading issue about asymptotic analysis is that one of three scenarios are always considered: worst case, average case, or best case scenario.
 
@@ -90,6 +86,15 @@ Real world inputs often fall outside these sharp definitions of best, middle, an
 
 This leads to performance that in many cases will not match theoretical calculations seen with asymptotics as closely as it is often made out or assumed to be.
 
+"Many cases" will lack adherence to asymptotic bounds and analysis as they may lack the input size to reach near asymptotic relevance.
+
+For instance, an algorithm might perform better than its worst case bound for most real world inputs but still be judged by its theoretical worst case scenario with asymptotic analysis.
+
+Additionally, judging an algorithm from defined best worst and average case type disregards considering how common these occurrences are within an algorithm.
+
+For instance, consider a potential implementation that has a best case runtime only when a list is completely sorted but manages to experience equal worst case runtime in a high number of the inputs it could be presented.
+
+Of course, this would be a bad implementation, but it gives an example of how consulting asymptotic bounds alone do not show some necessary context regarding implementations.
 
 
 
@@ -140,24 +145,29 @@ we can assume the runtime of the 10000 element example to be 6.66666667 seconds.
 Response 3:
 
 
-This could be the case, despite the fact that reasoning using the asymptotic complexity suggests a different time for various potential reasons altering the runtime than what was anticipated when using asymptotics.
+A first example of something that could cause this to be the case is if the objects stored within the trees are compared in a way that requires large amounts of work, a scenario that could occur as explained below.
 
-The discrepancy could stem from the tree’s balance.
+Lets say that rather than the elements within the tree being expressed as logical true / false or simple numerical values, that the tree's elements are made up of strings or a more complex type instead.
 
-If elements were inserted in sorted order, the search tree gains the functionality similar to a linked list, turning a complexity O(log n) search into O(n). 
+An implementation could attempt to compare the strings character by character.
 
-The loss of logarithmic scaling in favor of linear asymptotic scaling could certainly cause such an increase upon moving to the larger sort of 10000 elements, as reasoned below.
+These string compares could be assumed to take linear time, growing based upon the length of the compared strings.
 
-Let's conside the idea that the worst case tree complexity was being experienced, so O(n). 
+Let's say that these strings are very long and vary at most by a couple characters at the end of their respective stored string.
 
-The work and runtime of the implementation would resultantly scale linearly via the nature of O(n) with that of the input size.
+Then, the compares between the two strings would have to waste time runing across all prior letters before this discovered difference between the two strings.
 
-The algorithm started with 1000 elements running at 5s, and went to 10000 elements running at 100s.
+This process of comparing the contents of the strings could certainly create the runtime increasing concerns based on input size as expressed in the problem.
 
-If we were to follow the prediction from following the O(n) tree directly, this would be a transition of 10x (following input size) rather than the experienced 20x between the 5s and 100s.
+This is the case as all the problem specified was that the elements within the binary search tree increased by 10x, from 1000 to 10000.
 
-Though the worst case tree implementation may not theoretically contribute all of this proposed time increase directly, it could certainly play a large enough role that combined with a degree of the below issues, an increase to 100s could be possible and certainly realistic.
+No guarantee was made regarding the consistency or similarity of potential elements that the binary tree may house.
 
+Let's say that the original 1000 elements (strings in this scenario) from the 1000 element tree were preserved into the 10000 element tree.
+
+The remaining 9000 elements could be strings of any arbitrary length per the details of the problem.
+
+These linear work string compares between the elements of the binary search tree could certainly contribute such a notable increase in required time to run, due to the imported elements into the tree not being guaranteed to be of any particular string length.
 
 
 
@@ -202,6 +212,8 @@ Reviewed with course material as well as these two Cornell lecture pages, helpin
 “Lecture 16: Introduction to Asymptotic Analysis.” www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs312/2004fa/lectures/lecture16.htm.
 
 “Asymptotic Complexity.” www.cs.cornell.edu, Cornell University, www.cs.cornell.edu/courses/cs3110/2012sp/lectures/lec19-asymp/review.html.
+
+https://cs.stackexchange.com/questions/50370/what-set-of-primitive-operations-are-assumed-to-be-constant-time-in-complexity-a
 
 
 //
