@@ -59,7 +59,10 @@ Asymptotic analysis could give off the impression that these two algorithms shar
 
 
 
+
+
 **Reason 2: **
+
 
 Asymptotic analysis could be potentially misleading as it assumes basic operations such as traditional compares to act in constant O(1) time.
 
@@ -78,23 +81,30 @@ By treating these operations as constants within asymptotic analysis, further di
 
 
 
-**Reason 3: Defined Case Types being Restrictive**
+**Reason 3: Defined Case Types being Restrictive, Non Informative Regarding differing likelihood of best and worst cases potentially occuring**
+
 
 A third misleading issue about asymptotic analysis is that one of three scenarios are always considered: worst case, average case, or best case scenario.
+
+Two of those three definitions entirely ignore to address possible liklehood of them occuring, being that of the best case and worst case complexity of an implementation.
 
 Real world inputs often fall outside these sharp definitions of best, middle, and worst case categories. (though still remaining between the best case and worst case)
 
 This leads to performance that in many cases will not match theoretical calculations seen with asymptotics as closely as it is often made out or assumed to be.
 
-"Many cases" will lack adherence to asymptotic bounds and analysis as they may lack the input size to reach near asymptotic relevance.
+Real world normal usage of implementations can perform in input size ranges where lower order terms have a high sway over the experienced runtime.
 
-For instance, an algorithm might perform better than its worst case bound for most real world inputs but still be judged by its theoretical worst case scenario with asymptotic analysis.
+An algorithm's worst case asymptotic bound might not reflect usually experienced behavior, as the worst case scenario may be difficult to encounter in practical usage of the implementation.
 
-Additionally, judging an algorithm from defined best worst and average case type disregards considering how common these occurrences are within an algorithm.
+Consider two algorithms that each have worst case Θ(n^2) complexity.
 
-For instance, consider a potential implementation that has a best case runtime only when a list is completely sorted but manages to experience equal worst case runtime in a high number of the inputs it could be presented.
+One algorithm could have a worst case that only occurs if an input list is reverse sorted, for instance, so one possible input scenario where a worst case is experienced.
 
-Of course, this would be a bad implementation, but it gives an example of how consulting asymptotic bounds alone do not show some necessary context regarding implementations.
+The other O(n^2) implementation may have a worst case that is shared among a large proportion of possible input lists. 
+
+These differences in likelyhood (and thus relevance of worst case bounds, as an example) to standard use cases can vary widely between implementations that on paper share the same complexity as one another.
+
+Of course, this would be a bad implementation, but it gives an example of how consulting asymptotic bounds alone do not show some necessary context and could be misleading when observed directly.
 
 
 
