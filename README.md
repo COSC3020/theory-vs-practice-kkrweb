@@ -61,7 +61,9 @@ Asymptotic analysis could give off the impression that these two algorithms shar
 
 
 
-**Reason 2: **
+
+
+**Reason 2: Constant Basic Operations Assumed**
 
 
 Asymptotic analysis could be potentially misleading as it assumes basic operations such as traditional compares to act in constant O(1) time.
@@ -81,32 +83,40 @@ By treating these operations as constants within asymptotic analysis, further di
 
 
 
-**Reason 3: Defined Case Types being Restrictive, Non Informative Regarding differing likelihood of best and worst cases potentially occuring**
 
 
-A third misleading issue about asymptotic analysis is that one of three scenarios are always considered: worst case, average case, or best case scenario.
+**Reason 3**
+//added 4/17/2025 as the previous version here was nuked
 
-Two of those three definitions entirely ignore to address possible liklehood of them occuring, being that of the best case and worst case complexity of an implementation.
+A third reason asymptotic analysis can be misleading stems from the nature and definition of asymptotic analysis and its conclusions.
 
-Real world inputs often fall outside these sharp definitions of best, middle, and worst case categories. (though still remaining between the best case and worst case)
+Consider an implementation with an asymptotic bound of $O(n^2)$ that is rarely achieved.
 
-This leads to performance that in many cases will not match theoretical calculations seen with asymptotics as closely as it is often made out or assumed to be.
+Consider a second implementation with an asymptotic bound of $O(n^2)$ that is regularly achieved.
 
-Real world normal usage of implementations can perform in input size ranges where lower order terms have a high sway over the experienced runtime.
+Asymptotic analysis would say both as belonging to $O(n^2)$.
 
-An algorithm's worst case asymptotic bound might not reflect usually experienced behavior, as the worst case scenario may be difficult to encounter in practical usage of the implementation.
+This could certainly be misleading as the two implementations share in belonging to $O(n^2)$, but are functionally different in how often that runtime actually occurs.
 
-Consider two algorithms that each have worst case Θ(n^2) complexity.
+For instance, the first algorithm might only reach its $O(n^2)$ complexity on few inputs, while the second algorithm could show this behavior with a wider range of inputs.
 
-One algorithm could have a worst case that only occurs if an input list is reverse sorted, for instance, so one possible input scenario where a worst case is experienced.
+One bound could represent a rare scenario that only happens in extremely specific input cases, while another could reflect standard performance of an implementation.
 
-The other O(n^2) implementation may have a worst case that is shared among a large proportion of possible input lists. 
+Yet both receive identical asymptotic notation, observed with $f(n) \in O(n^2)$ and $g(n) \in O(n^2)$ being valid.
 
-These differences in likelyhood (and thus relevance of worst case bounds, as an example) to standard use cases can vary widely between implementations that on paper share the same complexity as one another.
+This limitation of asymptotic analysis means that two algorithms with the same big O classification may have notably different practical performance.
 
-Of course, this would be a bad implementation, but it gives an example of how consulting asymptotic bounds alone do not show some necessary context and could be misleading when observed directly.
+Additionally, consider two implementations that have respective asymptotic complexities of O(n^3) and O(1) respectively.
 
+$O(n^3) \in O(n!)$ and $O(1) \in O(n!)$ are both valid.
 
+Both of these implementations have runtimes that are within a shared broader asymptotic runtime, bounded by $O(n!)$.
+
+This could be misleading as it could give the impression that the two asymptotic runtimes are significantly more similar than they actually are in practice.
+
+This demonstrates how asymptotic analysis can obscure true performance characteristics when taken without additional context.
+
+As a result, it is further evident how asymptotic analysis could be potentially misleading.
 
 
 
